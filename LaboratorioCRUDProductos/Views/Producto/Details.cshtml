@@ -1,0 +1,30 @@
+﻿@model LaboratorioCRUDProductos.Models.ProductoModel
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles del producto</h2>
+
+<hr />
+<dl class="row">
+    <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Id)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(m => m.Id)</dd>
+
+    <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Nombre)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(m => m.Nombre)</dd>
+
+    <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Descripcion)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(m => m.Descripcion)</dd>
+
+    <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Precio)</dt>
+    <dd class="col-sm-10">@Model.Precio.ToString("N2")</dd>
+
+    <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Stock)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(m => m.Stock)</dd>
+</dl>
+
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" })
+    @Html.ActionLink("Volver al listado", "Index", null, new { @class = "btn btn-secondary" })
+</p>
